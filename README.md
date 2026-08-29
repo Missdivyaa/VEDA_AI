@@ -1,4 +1,4 @@
-# VedaAI · AI Assessment Extraction & Answer Mapping
+# VedaAI 
 
 A teacher uploads a **question paper** and one student's **handwritten answer
 sheet** (PDF or images). The app extracts every question, transcribes the
