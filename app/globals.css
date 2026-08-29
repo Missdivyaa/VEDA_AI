@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #17181c;
+  --ink-soft: #6b6f76;
+  --line: #e6e5e2;
+  --page-bg: #f4f4f2;
+  --panel: #ffffff;
+  --accent: #e8562d; /* coral-orange, the ONE brand accent color */
+  --accent-soft: #fdece5;
+  --accent-ink: #c2431f;
+  --correct: #1f8a53;
+  --correct-bg: #eaf7ef;
+  --partial: #c17d0f;
+  --partial-bg: #fdf3e0;
+  --incorrect: #d43d2f;
+  --incorrect-bg: #fdeceb;
+  --unanswered: #8a8a86;
+  --unanswered-bg: #f0f0ee;
+
+  /* Answer-sheet overlay boxes (functional highlight colours, not brand colours) */
+  --box-selected: #1f8a53;
+  --box-selected-bg: rgba(31, 138, 83, 0.14);
+  --box-other: #2f6fed;
+  --box-other-bg: rgba(47, 111, 237, 0.1);
+  --box-unmatched: #c17d0f;
+  --box-unmatched-bg: rgba(193, 125, 15, 0.12);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-line: var(--line);
+  --color-page-bg: var(--page-bg);
+  --color-panel: var(--panel);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ink: var(--accent-ink);
+  --color-correct: var(--correct);
+  --color-correct-bg: var(--correct-bg);
+  --color-partial: var(--partial);
+  --color-partial-bg: var(--partial-bg);
+  --color-incorrect: var(--incorrect);
+  --color-incorrect-bg: var(--incorrect-bg);
+  --color-unanswered: var(--unanswered);
+  --color-unanswered-bg: var(--unanswered-bg);
+  --color-box-selected: var(--box-selected);
+  --color-box-other: var(--box-other);
+  --color-box-unmatched: var(--box-unmatched);
+
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Small sparkles scattered around the upload-screen avatar */
+@keyframes sparkle-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 1;
+  }
+}
+
+.sparkle-pulse {
+  animation: sparkle-pulse 2.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Single sparkle on the processing screen */
+@keyframes processing-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+  }
+}
+
+.processing-pulse {
+  animation: processing-pulse 1.6s ease-in-out infinite;
+  transform-origin: center;
+}
